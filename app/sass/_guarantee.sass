@@ -1,0 +1,75 @@
+.guarantee
+	height: 1040px
+	display: flex
+	align-items: center
+	@media #{$_lg}
+		height: 740px
+	@media #{$_md}
+		height: 580px
+	@media #{$_sm}
+		height: auto
+		padding: 8rem 0
+	.section_title
+		margin-bottom: 23rem
+		@media #{$_lg}
+			margin-bottom: 15rem
+		@media #{$_md}
+			margin-bottom: 12rem
+		@media #{$_sm}
+			text-align: center
+	&__item
+		position: relative
+		+col(3)
+		float: left
+		+offset(1)
+		&:last-of-type
+			&:after
+				@media #{$_sm}
+					display: none
+		&:after
+			@media #{$_sm}
+				width: 120px
+				height: 2px
+				background-color: $blueBg
+				content: ""
+				position: absolute
+				left: 0
+				right: 0
+				margin: 0 auto
+				bottom: -30px
+		@media #{$_sm}
+			+col(12)
+			+offset(0)
+			margin-bottom: 8rem
+			text-align: center
+		&:first-of-type
+			+offset(0)
+		&:before
+			content: ""
+			height: 140%
+			width: 130%
+			position: absolute
+			box-shadow: 0 34px 40px rgba(64,80,105,.15)
+			top: -25%
+			left: -15%
+			opacity: 0
+			transition: opacity .4s
+			@media #{$_sm}
+				display: none
+		&:hover:before
+			opacity: 1
+		.guarantee_title
+			margin-top: 4rem
+			font-size: 2.4rem
+			line-height: 3.6rem
+			color: #4e5d73
+			font-weight: bold
+			margin-bottom: 1rem
+		.guarantee_pict
+			width: 60px
+			@media #{$_sm}
+				width: 120px
+		.guarantee_text
+			color: #4e5d73
+			font-size: 1.6rem
+			line-height: 3rem

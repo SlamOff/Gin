@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8" />
+	<title>Gin</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<!-- build:css css/combined.css -->
+	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="libs/slick-carousel/slick/slick.css" />
+	<!-- endbuild -->
+</head>
+<body class="buy_page">
+	<main class="main main2">
+		<div class="container">
+			<header class="main__header">
+				<div class="main__header__wrapper">
+					<div class="logo"><a href="index.html"><img src="img/logo.svg" alt=""></a></div>
+					<div class="link"><a href="#">О проекте</a></div>
+					<div class="top_phone"><a href="tel:+380777777777">+38 077 777 77 77</a></div>
+					<div class="basket">
+						<a href="#"><img src="img/basket.png" alt=""></a>
+					</div>
+					<div class="top_btn_wrapper">
+						<a href="#" class="popup top_btn main_btn">Заказать</a>
+					</div>
+				</div>
+			</header>
+			<div class="main__content">
+				<div class="title_wrapper">
+					<h2 class="main_title">Корзина</h2>
+					<h4 class="main_subtitle">Введите Ваши данные</h4>
+				</div>
+				<div class="form_wrapper">
+					<form class="main_form" id="buyForm" method="post" action="mail.php">
+						<input type="text" name="name" placeholder="Имя">
+						<input type="tel" name="tel" placeholder="Телефон">
+						<input type="email" name="email" placeholder="E-mail">
+					</form>
+				</div>
+			</div>
+		</div>	
+	</main>
+	
+	<section class="buy">
+		<div class="container">
+			<div class="buy_wrapper">
+				<div class="buy__gift">
+					<img class="buy__gift__pict" src="img/5.png" alt="">
+				</div>
+				<div class="buy__content">
+					<h3 class="section_title section_title--buy">Подарок для нее</h3>
+					<div class="price">
+						<p class="price__text">399<span>грн</span></p>
+						<div class="price__add_item">
+							<span class="deduct">-</span>
+							<span class="quantity">1</span>
+							<span class="add">+</span>
+						</div>
+					</div>
+					<form class="buy_form" action="mail.php" id="buyForm">
+						<label class="checkbox">
+							<span class="circle"></span>
+							<input id="checkbox" name="checkbox" type="checkbox">
+							Отправить мне
+						</label>
+						<label class="name">
+							<input name="name" type="text" placeholder="Имя">
+						</label>
+						<label class="tel">
+							<input name="phone" type="tel" placeholder="Телефон">
+						</label>
+						<label class="address">
+							<input name="address" type="text" placeholder="Адрес">
+						</label>
+						<label class="time">
+							<input name="time_form" type="text" placeholder="Время от">
+						</label>
+						<label class="time">
+							<input name="time_to" type="text" placeholder="Время до">
+						</label>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section class="pay">
+		<div class="container">
+			<h3 class="section_title section_title--buy">Выберите способ оплаты</h3>
+			<div class="pay__item">
+				<img id="credit" class="pay__item__pict" src="img/credit-card.png" alt="">
+				<!-- <object class="pay__item__pict" type="image/svg+xml" data="img/credit-card.svg" id="object" class="icon"></object> -->
+				<p class="pay__item__text">Visa / MasterCard</p>
+			</div>
+			<div class="pay__item">
+				<img id="funds" class="pay__item__pict" src="img/funds.png" alt="">
+				<!-- <object class="pay__item__pict" type="image/svg+xml" data="img/funds.svg" id="object" class="icon"></object> -->
+				<p class="pay__item__text">Наличными курьеру</p>
+			</div>
+			<div class="pay__price">
+				Итого
+				<p class="pay__price__text">399<span>грн</span></p>
+				<a href="#" class="main_btn">Продолжить</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="feedback">
+		<div class="container">
+			<h3 class="section_title section_title--white">Задайте вопрос</h3>
+			<form class="feedback__form" id="mainForm" method="post" action="mail.php">
+				<input type="text" name="name" placeholder="Имя">
+				<input type="email" name="email" placeholder="E-mail">
+				<textarea name="msg" placeholder="Вопрос"></textarea>
+				<button type="submit" class="main_btn">Отправить</button>
+			</form>
+		</div>
+	</section>
+	<!-- <script>
+		$('img.pay__item__pict').each(function(){
+            var $img = $(this);
+            var imgID = $img.attr('id');
+            var imgClass = $img.attr('class');
+            var imgURL = $img.attr('src');
+
+            $.get(imgURL, function(data) {
+                // Get the SVG tag, ignore the rest
+                var $svg = $(data).find('svg');
+
+                // Add replaced image's ID to the new SVG
+                if(typeof imgID !== 'undefined') {
+                    $svg = $svg.attr('id', imgID);
+                }
+                // Add replaced image's classes to the new SVG
+                if(typeof imgClass !== 'undefined') {
+                    $svg = $svg.attr('class', imgClass+' replaced-svg');
+                }
+
+                // Remove any invalid XML tags as per http://validator.w3.org
+                $svg = $svg.removeAttr('xmlns:a');
+
+                // Replace image with new SVG
+                $img.replaceWith($svg);
+
+            }, 'xml');
+
+        });
+	</script> -->
+
+	<!--[if lt IE 9]>
+	<script src="libs/html5shiv/dist/es5-shim.min.js"></script>
+	<script src="libs/html5shiv/dist/html5shiv.min.js"></script>
+	<script src="libs/html5shiv/dist/html5shiv-printshiv.min.js"></script>
+	<script src="libs/respond/dest/respond.min.js"></script>
+	<![endif]-->
+	
+	<!-- build:js scripts/combined.js -->
+	<script src="libs/jquery/dist/jquery.min.js"></script>
+	<script src="libs/slick-carousel/slick/slick.min.js"></script>
+	<script src="js/main.js"></script>
+	<!-- endbuild -->
+</body>
+</html>

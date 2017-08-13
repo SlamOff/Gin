@@ -1,0 +1,290 @@
+.main
+	background: #fff
+	overflow: hidden
+	background-position: right top
+	background-repeat: no-repeat
+	height: 100rem
+	position: relative
+	background-image: url("../img/main_bg.png")
+	background-repeat: no-repeat
+	background-position: center 13rem
+	@media #{$_lg}
+		background-image: none
+		height: 800px
+		padding: 8rem 0 5rem
+	@media #{$_md}
+		height: auto
+	&:after
+		content: ""
+		position: absolute
+		width: 34%
+		height: 100%
+		background-image: $gradient
+		top: 0
+		right: 0
+		@media (max-width: 1720px)
+			width: 32%
+		@media (max-width: 1560px)
+			width: 30%
+		@media (max-width: 1450px)
+			width: 28%
+		@media (max-width: 1260px)
+			width: 26%
+		@media #{$_lg}
+			display: none
+	&__header
+		height: 7rem
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		margin: 0 auto
+		z-index: 100
+		transition: box-shadow .3s
+		transition: background-color .3s
+		box-shadow: none
+		@media #{$_sm}
+			position: absolute
+		&--scrolled
+			background-color: #fff
+			box-shadow: 0 5px 15px rgba(0,0,0,.4)
+			width: 100%
+			.main__header__wrapper
+				.top_btn_wrapper
+					.top_btn
+						border: 1px solid $blueText
+						color: $blueText
+						&:hover
+							border: 1px solid #ec008c
+				.basket
+					a
+						img
+							filter: brightness(1) invert(1)
+							transition: filter .4s
+		&__wrapper
+			height: 100%
+			display: flex
+			align-items: center
+			margin: 0 auto
+			width: 1200px
+			@media #{$_lg}
+				width: 960px
+			@media #{$_md}
+				width: 750px
+				justify-content: space-between
+			@media #{$_sm}
+				width: 100%
+				padding: 0 15px
+				//flex-wrap: wrap
+			.logo
+				+col(1)
+				padding-top: 5px
+				@media #{$_sm}
+					width: 33.3%
+			.link
+				+col(1)
+				font-weight: 500
+				color: $blueText
+				margin-left: 2rem
+				text-align: right
+				@media #{$_lg}
+					+col(2)
+				@media #{$_sm}
+					width: 33.3%
+					text-align: center
+					margin-left: 0
+			.top_phone
+				+col(2)
+				+offset(5)
+				color: $blueText
+				font-size: 1.6rem
+				text-align: center
+				@media #{$_lg}
+					+offset(4)
+				@media #{$_md}
+					+offset(2)
+				@media #{$_sm}
+					+offset(0)
+					width: 33.3%
+					width: 100%
+					font-size: 1.8rem
+				@media (max-width: 550px)
+					position: absolute
+					left: 0
+					right: 0
+					margin: 0 auto
+					top: 50px
+					font-size: 2.4rem
+					font-weight: bold
+			.basket
+				text-align: center
+				display: block
+				a
+					display: block
+					img
+						filter: initial
+						@media #{$_lg}
+							filter: brightness(1) invert(1)
+				+col(1)
+				@media #{$_sm}
+					width: 33.3%!important
+				@media (max-width: 550px)
+					text-align: right
+			.top_btn_wrapper
+				+col(2)
+				@media #{$_sm}
+					display: none
+				text-align: right
+				.top_btn
+					display: inline-block
+					font-size: 1.8rem
+					height: 2.2em
+					border-radius: 20px
+					border: 1px solid #fff
+					line-height: 2.2em
+					text-align: center
+					color: #fff
+					letter-spacing: .05em
+					font-weight: bold
+					width: 180px
+					transition: all .2s
+					&:hover
+						box-shadow: 0 18px 29px rgba(64,80,105,.35)
+						background-color: #fff
+						color: #ec008c
+						@media #{$_lg}
+							border: 1px solid #ec008c
+					@media #{$_lg}
+						border: 1px solid $blueText
+						color: $blueText
+						max-width: 100%
+	&__content
+		padding-top: 7rem
+		height: 100%
+		display: flex
+		// flex-wrap: wrap
+		align-items: center
+		color: $blueText
+		.main_title
+			+col(8)
+			font-weight: bold
+			font-size: 15rem
+			line-height: 12rem
+			position: relative
+			z-index: 1
+			@media #{$_sm}
+				+col(12)
+				font-size: 8.5rem
+				line-height: 8.5rem
+			@media #{$_xs}
+				font-size: 6rem
+				line-height: 6rem
+			&:before
+				content: ""
+				position: absolute
+				background-image: url("../img/h1_decor.png")
+				left: -130px
+				top: -110px
+				width: 250px
+				height: 255px
+				z-index: -1
+				@media (max-width: 1450px)
+					display: none
+			&:after
+				content: ""
+				position: absolute
+				background-image: url("../img/gift.png")
+				background-repeat: no-repeat
+				background-size: 100%
+				z-index: 2
+				width: 842px
+				height: 706px
+				top: -110px
+				left: 90%
+				@media (max-width: 1450px)
+					max-width: 660px
+					left: 95%
+				@media #{$_lg}
+					top: 50px
+					max-width: 580px
+				@media #{$_md}
+					display: none
+		.main_subtitle
+			font-weight: 500
+			font-size: 2.4rem
+			line-height: 3rem
+			+col(6)
+			margin: 2em 0 5em
+			@media #{$_sm}
+				+col(12)
+				margin: 2em 0 2em
+	&.main2
+		background-image: url("../img/main2_bg.png")
+		background-position: center 85px
+		height: 74rem
+		@media #{$_lg}
+			background-image: none
+		&:after
+			display: none
+		.main__header
+			.main__header__wrapper
+				.top_btn_wrapper
+					.top_btn
+						border: 0
+						color: #fff
+						&:hover
+							border: 0
+				.basket
+					a
+						img
+							filter: brightness(1) invert(1)
+							transition: filter .4s
+		.main__content
+			@media #{$_sm}
+				flex-wrap: wrap
+			.title_wrapper
+				+col(4)
+				@media #{$_sm}
+					+col(12)
+				.main_title
+					font-size: 10rem
+					line-height: 12rem
+					+col(12)
+					@media #{$_sm}
+						text-align: center
+					&:after
+						display: none
+				.main_subtitle
+					+col(12)
+					margin: 1em 0 0
+					@media #{$_sm}
+						text-align: center
+			.form_wrapper
+				+col(7)
+				+offset(1)
+				padding: 10rem
+				box-shadow: 18px 17px 50px rgba(64,80,105,.2)
+				background-color: rgba(255,255,255,.1)
+				@media #{$_sm}
+					+col(12)
+					+offset(0)
+					padding: 4rem 15px
+				.main_form
+					@media #{$_sm}
+						max-width: 500px
+						margin-left: auto
+						margin-right: auto
+					input
+						width: 100%
+						border: 0
+						border-bottom: 1px solid $blueText
+						height: 30px
+						line-height: 30px
+						margin-bottom: 3rem
+						background-color: transparent
+.main .container
+	height: 100%
+	@media #{$_sm}
+		position: static
+.secondary_page
+	.header

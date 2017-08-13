@@ -1,0 +1,80 @@
+.what
+	padding-top: 16rem
+	padding-bottom: 25rem
+	z-index: 1
+	@media #{$_lg}
+		padding-bottom: 12rem
+	.section_title
+		margin-bottom: 10rem
+		@media #{$_sm}
+			text-align: center
+			margin-bottom: 4rem
+	&:before
+		background-repeat: no-repeat
+		background-position: center top
+		background-image: url('../img/what_bg.png')
+		width: 100%
+		position: absolute
+		left: 0
+		top: -75px
+		height: 1255px
+		@media #{$_lg}
+			display: none
+	&__content
+		+col(6)
+		color: $blueText
+		padding-top: 4rem
+		float: left
+		@media #{$_sm}
+			+col(12)
+			text-align: center
+		.what_text
+			font-weight: 500
+			font-size: 1.6rem
+			line-height: 3.6rem
+			padding-right: 100px
+			@media #{$_md}
+				padding-right: 0
+			@media #{$_sm}
+				margin-left: auto
+				margin-right: auto
+				max-width: 500px
+		.what_subtitle
+			font-weight: bold
+			font-size: 3.6rem
+			line-height: 7.2rem
+			margin: 6rem 0 2rem
+			@media #{$_md}
+				line-height: 5rem
+	&__pict
+		+col(5)
+		+offset(1)
+		float: left
+		text-align: right
+		@media #{$_sm}
+			+col(12)
+			+offset(0)
+			text-align: center
+		.picture_wrapper
+			position: relative
+			display: inline-block
+			img
+				transform: translate(-3rem, -5rem)
+				border: 20px solid #fff
+				@media #{$_lg}
+					max-width: 100%
+				@media #{$_md}
+					border: 0
+					transform: none
+				@media #{$_sm}
+					margin-top: 4rem
+			&:before
+				width: 41rem
+				height: 57rem
+				content: ""
+				background-image: $gradient
+				position: absolute
+				right: 0
+				bottom: 4px
+				@media #{$_md}
+					display: none

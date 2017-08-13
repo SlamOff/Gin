@@ -1,0 +1,146 @@
+.select
+	background-color: $blueBg
+	background-image: url("../img/select_bg.png")
+	background-position: center 100px
+	background-repeat: no-repeat
+	padding-top: 21rem
+	padding-bottom: 10rem
+	@media #{$_sm}
+		text-align: center
+		padding-top: 8rem
+		.popup
+			margin: 0 auto
+	&__gift
+		+col(5)
+		float: left
+		@media #{$_lg}
+			+col(4)
+		@media #{$_sm}
+			display: none
+		&:after
+			display: table
+			clear: both
+			content: ""
+		&__pict
+			max-width: 700px
+			transform: translateY(-4rem)
+			@media #{$_lg}
+				max-width: 530px
+			@media #{$_md}
+				max-width: 320px
+				transform: none
+	&__tabs
+		+col(6)
+		+offset(1)
+		float: left
+		position: relative
+		z-index: 3
+		color: #fff
+		.main_btn
+			@media #{$_sm}
+				margin: 0 auto
+		@media #{$_lg}
+			+col(7)
+		@media #{$_md}
+			+col(8)
+			+offset(0)
+		@media #{$_sm}
+			+col(12)
+		&:after
+			display: table
+			clear: both
+			content: ""
+		.tabs_wrapper
+			margin-bottom: 8rem
+			.tab_btn
+				display: inline-block
+				width: 160px
+				margin-right: 4rem
+				border-radius: 27px 28px 28px 27px/27px 27px 28px 28px
+				height: 55px
+				line-height: 55px
+				text-align: center
+				font-size: 1.8rem
+				font-weight: bold
+				letter-spacing: .1em
+				color: #fff
+				@media #{$_lg}
+					margin-right: 3rem
+				@media #{$_lg}
+					margin-right: 2rem
+					width: 150px
+				@media (max-width: 600px)
+					display: block
+					margin: 2rem auto
+				&:last-of-type
+					margin-right: 0
+					@media #{$_sm}
+						margin: 2rem auto
+				&.tab_btn1
+					border: 2px solid #ec008c
+				&.tab_btn2
+					border: 2px solid #0abfbc
+				&.tab_btn3
+					border: 2px solid #ffbb43
+				&.main_btn
+					border: 0
+					position: relative
+					top: -2px
+			p
+				font-weight: 500
+				font-size: 1.6rem
+				line-height: 2.4rem
+				margin-top: 3rem
+				padding-right: 20px
+				@media #{$_sm}
+					padding-right: 0
+					font-size: 1.8rem
+					max-width: 500px
+					margin-left: auto
+					margin-right: auto
+		.price
+			margin-bottom: 8rem
+			@media #{$_sm}
+				margin-bottom: 2rem
+			&__title
+				font-weight: bold
+				font-size: 3rem
+				line-height: 3rem
+				@media #{$_sm}
+					font-size: 2.8rem
+			&__items
+				display: flex
+				justify-content: space-between
+				@media #{$_sm}
+					max-width: 500px
+					margin-left: auto
+					margin-right: auto
+				.item
+					font: 7.2rem "Raleway", sans-serif
+					font-weight: bold
+					line-height: 9rem
+					@media #{$_sm}
+						font-size: 6rem
+					span
+						font-size: 2.4rem
+						@media #{$_sm}
+							font-size: 2rem
+					&.active
+						background: $gradient
+						-webkit-background-clip: text
+						-webkit-text-fill-color: transparent
+	&__chosen_gift
+		+col(10)
+		margin-top: 5rem
+		@media #{$_md}
+			+col(12)
+		@media #{$_sm}
+			display: none
+		&__item
+			width: 128px
+			height: 128px
+			border: 2px solid $blueText
+			border-right: 0
+			float: left
+			&:last-of-type
+				border-right: 2px solid $blueText

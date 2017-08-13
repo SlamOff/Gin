@@ -1,0 +1,89 @@
+.emotion
+	position: relative
+	padding-top: 37rem
+	@media #{$_lg}
+		padding-top: 10rem
+	@media #{$_sm}
+		text-align: center
+	.section_title
+		@media #{$_sm}
+			text-align: center
+	&:before
+		content: ""
+		position: absolute
+		left: 0
+		top: 350px
+		width: 100%
+		height: 801px
+		background-image: url("../img/emotion_bg.png")
+		background-repeat: no-repeat
+		background-position: center 0
+		@media #{$_lg}
+			display: none
+	&__pict
+		+col(5)
+		float: left
+		display: inline-block
+		position: relative
+		@media #{$_sm}
+			+col(12)
+			text-align: center
+		&:before
+			width: 85%
+			position: absolute
+			height: 85%
+			content: ""
+			background-image: $gradient
+			left: 0
+			bottom: 0
+			@media #{$_sm}
+				display: none
+		&:after
+			width: 160px
+			height: 160px
+			background-image: url("../img/emotion_dots.png")
+			content: ""
+			position: absolute
+			top: -80px
+			right: -50px
+			z-index: -1
+			@media #{$_lg}
+				display: none
+		.picture
+			border: 20px solid #fff
+			position: relative
+			transform: translate(3rem, -5rem)
+			@media #{$_lg}
+				max-width: 100%
+			@media #{$_sm}
+				transform: none
+				border: 0
+	&__content
+		+col(6)
+		+offset(1)
+		float: left
+		&__pretitle
+			color: #b5b5b5
+			text-transform: uppercase
+			font-weight: bold
+			line-height: 7.2rem
+			font-size: 1.8rem
+			letter-spacing: .1em
+		&__text
+			color: $blueText
+			font-size: 1.8rem
+			line-height: 3.6rem
+			font-weight: 500
+			+col(8)
+			margin-top: 4rem
+			@media #{$_lg}
+				+col(10)
+			@media #{$_lg}
+				+col(12)
+			@media #{$_sm}
+				max-width: 500px
+				margin-left: auto
+				margin-right: auto
+		@media #{$_sm}
+			+col(12)
+			+offset(0)
