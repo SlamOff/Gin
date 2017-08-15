@@ -10,7 +10,8 @@ $md: "(min-width: 1025px)"
 $_md: "(max-width: 1024px)"
 $lg: "(min-width: 1224px)"
 $_lg: "(max-width: 1224px)"
-$xlg: "(min-width: 1800px)"
+$_xlg: "(max-width: 1700px)"
+$xlg: "(min-width: 1700px)"
 .buy_page input::-webkit-input-placeholder
 	font-size: 1.8rem
 	font-weight: normal
@@ -136,14 +137,18 @@ $xlg: "(min-width: 1800px)"
 	display: table
 html
 	font-size: 10px
+	@media #{$_xlg}
+		font-size: 8px
 	@media #{$_lg}
-		font-size: 9px
+		font-size: 8px
 	@media #{$_md}
 		font-size: 8px
 	@media #{$_sm}
 		font-size: 7.5px
 	@media #{$_xs}
 		font-size: 7px
+	@media #{$xlg}
+		font-size: 10px
 	body
 		min-width: 320px
 		font: 1.8rem "FiraSans", sans-serif

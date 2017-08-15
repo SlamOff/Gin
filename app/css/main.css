@@ -219,9 +219,12 @@ table {
 
 html {
   font-size: 10px; }
+  @media (max-width: 1700px) {
+    html {
+      font-size: 8px; } }
   @media (max-width: 1224px) {
     html {
-      font-size: 9px; } }
+      font-size: 8px; } }
   @media (max-width: 1024px) {
     html {
       font-size: 8px; } }
@@ -231,6 +234,9 @@ html {
   @media (max-width: 350px) {
     html {
       font-size: 7px; } }
+  @media (min-width: 1700px) {
+    html {
+      font-size: 10px; } }
   html body {
     min-width: 320px;
     font: 1.8rem "FiraSans", sans-serif;
@@ -606,9 +612,12 @@ html {
         height: 706px;
         top: -110px;
         left: 90%; }
+        @media (max-width: 1700px) {
+          .main__content .main_title:after {
+            max-width: 660px; } }
         @media (max-width: 1450px) {
           .main__content .main_title:after {
-            max-width: 660px;
+            max-width: 600px;
             left: 95%; } }
         @media (max-width: 1224px) {
           .main__content .main_title:after {
@@ -998,6 +1007,9 @@ html {
       -webkit-transform: translateY(-4rem);
           -ms-transform: translateY(-4rem);
               transform: translateY(-4rem); }
+      @media (max-width: 1700px) {
+        .select__gift__pict {
+          max-width: 600px; } }
       @media (max-width: 1224px) {
         .select__gift__pict {
           max-width: 530px; } }
@@ -1157,8 +1169,8 @@ html {
       .select__chosen_gift {
         display: none; } }
     .select__chosen_gift__item {
-      width: 128px;
-      height: 128px;
+      width: 12.8rem;
+      height: 12.8rem;
       border: 2px solid #405069;
       border-right: 0;
       float: left; }

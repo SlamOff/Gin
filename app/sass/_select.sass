@@ -24,6 +24,8 @@
 		&__pict
 			max-width: 700px
 			transform: translateY(-4rem)
+			@media #{$_xlg}
+				max-width: 600px
 			@media #{$_lg}
 				max-width: 530px
 			@media #{$_md}
@@ -137,8 +139,8 @@
 		@media #{$_sm}
 			display: none
 		&__item
-			width: 128px
-			height: 128px
+			width: 12.8rem
+			height: 12.8rem
 			border: 2px solid $blueText
 			border-right: 0
 			float: left
