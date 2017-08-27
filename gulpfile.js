@@ -88,7 +88,12 @@ gulp.task('build', ['clean'], function () {
 //copy images to outputDir
 gulp.task('imgBuild', ['clean'], function() {
 	return gulp.src(paths.devDir + 'img/**/*.*')
-		.pipe(imagemin())
+		.pipe(imagemin([
+		    imagemin.gifsicle({interlaced: true}),
+			imagemin.jpegtran({progressive: true}),
+			imagemin.optipng({optimizationLevel: 5}),
+			imagemin.svgo({plugins: [{removeViewBox: true}]})
+		]))
 		.pipe(gulp.dest(paths.outputDir + 'img/'));
 });
 

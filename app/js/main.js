@@ -63,6 +63,10 @@ $(document).ready(function() {
 			$('.select__gift__pict').attr('src', 'img/1.png');
 		}
 	});
+	$('.select__tabs .price__items .item').click(function(){
+		$('.select__tabs .price__items .item').removeClass('active');
+		$(this).addClass('active');
+	});
 	// ---------------------------- //
 	$('.review_slider').slick({
 		slidesToShow: 1,
@@ -84,17 +88,26 @@ $(document).ready(function() {
 		$(this).attr('placeholder', $(this).data('placeholder'));
 	});
 	// ---------------------------- //
-	// counter items
-	$('.add').click(function(e){
-		var quantity = $('.quantity').text();
-		console.log(+quantity++);
-		$('.quantity').text((quantity++));
+	
+	// counter buy items
+	var quantity = document.querySelector('.quantity');
+	var text = +quantity.textContent;
+	$('.add').click(function(){
+		text++;
+		quantity.textContent = text;
 	});
 	$('.deduct').click(function(){
-		var quantity = $('.quantity').text();
-		console.log(+quantity--);
-		$('.quantity').text(+quantity--);
+		text--;
+		if (text >= 0) {
+			quantity.textContent = text;
+		}
+		else {
+			text = 0;
+			return;
+		}
 	});
+	
+	
 	// ---------------------------- //
 	// checkbox
 	$('.checkbox').click(function(){

@@ -56,6 +56,7 @@
 			margin-bottom: 8rem
 			.tab_btn
 				display: inline-block
+				cursor: pointer
 				width: 160px
 				margin-right: 4rem
 				border-radius: 27px 28px 28px 27px/27px 27px 28px 28px
@@ -113,6 +114,7 @@
 			&__items
 				display: flex
 				justify-content: space-between
+				user-select: none
 				@media #{$_sm}
 					max-width: 500px
 					margin-left: auto
@@ -120,6 +122,7 @@
 				.item
 					font: 7.2rem "Raleway", sans-serif
 					font-weight: bold
+					cursor: pointer
 					line-height: 9rem
 					@media #{$_sm}
 						font-size: 6rem
