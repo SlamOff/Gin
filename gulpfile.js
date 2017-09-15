@@ -1,11 +1,12 @@
-// "use strict";
+"use strict";
 
 var gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	concat = require('gulp-concat'),
 	plumber = require('gulp-plumber'),
 	prefix = require('gulp-autoprefixer'),
-	imagemin = require('gulp-imagemin'),
+	git = require('gulp-git'),
+	htmlmin = require('gulp-htmlmin'),
 	browserSync = require('browser-sync').create();
 var useref = require('gulp-useref'),
 	gulpif = require('gulp-if'),
@@ -13,17 +14,20 @@ var useref = require('gulp-useref'),
 	uglify = require('gulp-uglify'),
 	rimraf = require('rimraf'),
 	notify = require('gulp-notify'),
+	imagemin = require('gulp-tinify'),
+	git = require('gulp-git'),
+	gitignore = require('gulp-gitignore'),
 	ftp = require('vinyl-ftp');
 
 var paths = {
 	sass: 'app/sass/*.sass',
+	html: 'app/*.html',
 	js: 'app/js/*.js',
 		devDir: 'app/',
 		outputDir: 'build/'
 	};
 
-
-/*********************************
+	/*********************************
 		Developer tasks
 *********************************/
 
@@ -49,9 +53,13 @@ gulp.task('scripts', function() {
 		.pipe(gulp.dest(paths.devDir + 'js/'))
 		.pipe(browserSync.stream());
 });
-
+gulp.task('htmls', function(){
+  gulp.src(paths.html)
+  .pipe(browserSync.stream());
+});
 //watch
 gulp.task('watch', function() {
+	gulp.watch(paths.html, ['htmls']);
 	gulp.watch(paths.sass, ['sass']);
 	gulp.watch(paths.js, ['scripts']);
 });
@@ -85,15 +93,10 @@ gulp.task('build', ['clean'], function () {
 		.pipe( gulp.dest(paths.outputDir) );
 });
 
-//copy images to outputDir
+// copy images to outputDir
 gulp.task('imgBuild', ['clean'], function() {
-	return gulp.src(paths.devDir + 'img/**/*.*')
-		.pipe(imagemin([
-		    imagemin.gifsicle({interlaced: true}),
-			imagemin.jpegtran({progressive: true}),
-			imagemin.optipng({optimizationLevel: 5}),
-			imagemin.svgo({plugins: [{removeViewBox: true}]})
-		]))
+	return gulp.src(paths.devDir + 'img/**/*')
+		.pipe(imagemin('480DKIlZJUpG8I-LDzmYbgta6fLj0Vfg'))
 		.pipe(gulp.dest(paths.outputDir + 'img/'));
 });
 
@@ -131,3 +134,45 @@ gulp.task('default', ['browser-sync', 'watch', 'sass', 'scripts']);
 
 //production
 gulp.task('prod', ['build', 'imgBuild', 'fontsBuild']);
+
+
+// git push
+// gulp.task('push', ['init', 'add', 'commit'], function(){
+//   git.push('origin', 'master', function (err) {
+//     if (err) throw err;
+//   });
+// });
+
+// gulp.task('add', function(){
+//   return gulp.src('**/*')
+//     .pipe(git.add());
+// });
+// gulp.task('commit', function(){
+//   return gulp.src('**/*')
+//     .pipe(git.commit('first commit'));
+// });
+// gulp.task('git_remote', function(){
+//   git.addRemote('origin', 'https://github.com/SlamOff/Gin', function (err) {
+//     if (err) throw err;
+//   });
+// });
+// gulp.task('push', function(){
+//   git.push('origin', function (err) {
+//     if (err) throw err;
+//   });
+// });
+// gulp.task('git', ['init', 'add', 'commit', 'push']);
+gulp.task('ignore', function () {
+    return gulp.src('src/**/*')
+        .pipe(gitignore())
+        .pipe(gulp.dest('dist'));
+});
+gulp.task('init', function(){
+  git.init(function (err) {
+    if (err) throw err;
+  });
+});
+gulp.task('add', function(){
+  return gulp.src('./**/*')
+    .pipe(git.add());
+});

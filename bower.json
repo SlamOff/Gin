@@ -15,9 +15,6 @@
   "dependencies": {
     "slick-carousel": "^1.7.1"
   },
-  "devDependencies": {
-    "perfect-scrollbar": "^0.7.0"
-  },
   "authors": [
     "Vitaliy <vetalsd2@gmail.com>"
   ]

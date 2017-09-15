@@ -285,7 +285,8 @@ html {
           font-size: 5rem; } }
     html body button {
       border: 0;
-      outline: 0; }
+      outline: 0;
+      cursor: pointer; }
     html body section {
       position: relative; }
       html body section:before {
