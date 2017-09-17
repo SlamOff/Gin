@@ -8,10 +8,9 @@ import babel from 'gulp-babel';
 	concat = require('gulp-concat'),
 	plumber = require('gulp-plumber'),
 	prefix = require('gulp-autoprefixer'),
-	git = require('gulp-git'),
 	htmlmin = require('gulp-htmlmin'),
 	strip = require('gulp-strip-comments'),
-	dir = require('gulp-dest'),
+	//dir = require('gulp-dest'),
 	//pagespeed = require('pagespeed'),
 	browserSync = require('browser-sync').create();
 var useref = require('gulp-useref'),
@@ -21,8 +20,8 @@ var useref = require('gulp-useref'),
 	rimraf = require('rimraf'),
 	notify = require('gulp-notify'),
 	imagemin = require('gulp-tinify'),
-	gitignore = require('gulp-gitignore');
-	//ftp = require('vinyl-ftp');
+	//gitignore = require('gulp-gitignore');
+	ftp = require('vinyl-ftp');
 var paths = {
 		sass: 'app/sass/*.sass',
 		html: 'app/*.html',
@@ -51,19 +50,21 @@ gulp.task('sass', function() {
 });
 // ecma
 gulp.task('es6', () => {
-	gulp.src(paths.devDir + 'es6/*.js')
+	gulp.src(paths.devDir + 'es6/main.js')
 	.pipe(babel())
 	.pipe(gulp.dest(paths.devDir + 'js/'))
+	
 });
 //js compile
 gulp.task('scripts', function() {
 	return gulp.src([
 			paths.js
 		])
-		.pipe(concat('js/main.js'))
+		.pipe(concat('main.js'))
 		.pipe(gulp.dest(paths.devDir + 'js/'))
 		.pipe(browserSync.stream());
 });
+
 gulp.task('htmls', function(){
   gulp.src(paths.html)
   .pipe(browserSync.stream());

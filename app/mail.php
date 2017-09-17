@@ -2,7 +2,7 @@
 $method = $_SERVER['REQUEST_METHOD'];
 $c = true;
 if ( $method == 'POST' ) {
-	$project_name = "АйдаТуда";
+	$project_name = "Gin";
 	$admin_email  = "vetalsd2@gmail.com";
 	$name = $_POST["name"];
 	$phone = $_POST["phone"];

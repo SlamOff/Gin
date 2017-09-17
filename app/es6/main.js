@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	// scroll menu fixed
+	let a = 4;
 	window.onscroll = function(){
 		var	scrolled = window.pageYOffset || document.documentElement.scrollTop,
 			header = document.querySelector('.main__header');

@@ -90,12 +90,10 @@
 			<h3 class="section_title section_title--buy">Выберите способ оплаты</h3>
 			<div class="pay__item">
 				<img id="credit" class="pay__item__pict" src="img/credit-card.png" alt="">
-				<!-- <object class="pay__item__pict" type="image/svg+xml" data="img/credit-card.svg" id="object" class="icon"></object> -->
 				<p class="pay__item__text">Visa / MasterCard</p>
 			</div>
 			<div class="pay__item">
 				<img id="funds" class="pay__item__pict" src="img/funds.png" alt="">
-				<!-- <object class="pay__item__pict" type="image/svg+xml" data="img/funds.svg" id="object" class="icon"></object> -->
 				<p class="pay__item__text">Наличными курьеру</p>
 			</div>
 			<div class="pay__price">
@@ -117,37 +115,6 @@
 			</form>
 		</div>
 	</section>
-	<!-- <script>
-		$('img.pay__item__pict').each(function(){
-            var $img = $(this);
-            var imgID = $img.attr('id');
-            var imgClass = $img.attr('class');
-            var imgURL = $img.attr('src');
-
-            $.get(imgURL, function(data) {
-                // Get the SVG tag, ignore the rest
-                var $svg = $(data).find('svg');
-
-                // Add replaced image's ID to the new SVG
-                if(typeof imgID !== 'undefined') {
-                    $svg = $svg.attr('id', imgID);
-                }
-                // Add replaced image's classes to the new SVG
-                if(typeof imgClass !== 'undefined') {
-                    $svg = $svg.attr('class', imgClass+' replaced-svg');
-                }
-
-                // Remove any invalid XML tags as per http://validator.w3.org
-                $svg = $svg.removeAttr('xmlns:a');
-
-                // Replace image with new SVG
-                $img.replaceWith($svg);
-
-            }, 'xml');
-
-        });
-	</script> -->
-
 	<!--[if lt IE 9]>
 	<script src="libs/html5shiv/dist/es5-shim.min.js"></script>
 	<script src="libs/html5shiv/dist/html5shiv.min.js"></script>
